@@ -1,8 +1,8 @@
 name = "tests"
 description = "Tests"
-version = "0.1.0-dev"
+version = "20240224"
 
-authors = ["Bent Bracke"]
+authors = ["Jeff Carter"]
 maintainers = ["Bent Bracke <bent@bracke.dk>"]
 maintainers-logins = ["bracke"]
 licenses = "BSD-3-Clause"
@@ -10,3 +10,16 @@ website = ""
 tags = []
 
 executables = ["tests"]
+
+[build-switches]
+"*".style_checks = "No"
+"*".ada_version = "Ada12"
+
+[[depends-on]] # Avoid bug in GNAT 13
+gnat = "<13.0 | >=13.3"
+
+[[depends-on]]
+ada_gui = "*"
+
+[[pins]]
+ada_gui = { path='..' }
