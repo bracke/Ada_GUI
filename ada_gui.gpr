@@ -1,0 +1,27 @@
+with "config/ada_gui_config.gpr";
+project Ada_Gui is
+   for Library_Name use "Ada_GUI";
+   for Library_Version use Project'Library_Name & ".so." & Ada_Gui_Config.Crate_Version;
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & Ada_Gui_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Library_Dir use "lib";
+
+   type Kind_ID is ("relocatable", "static", "static-pic");
+   Kind : Kind_ID :=
+     external ("ADA_GUI_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
+   for Library_Kind use Kind;
+
+   package Compiler is
+      for Default_Switches ("Ada") use Ada_Gui_Config.Ada_Compiler_Switches;
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+end Ada_Gui;
