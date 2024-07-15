@@ -7,7 +7,7 @@ maintainers = ["Bent Bracke <bent@bracke.dk>"]
 maintainers-logins = ["bracke"]
 licenses = "BSD-3-Clause"
 website = "https://github.com/bracke/Ada_GUI"
-tags = ["GUI","widgets","HTML"]
+tags = ["gui","widgets","html"]
 
 [build-switches]
 "*".style_checks = "No"
