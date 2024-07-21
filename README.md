@@ -1,4 +1,7 @@
 # Ada_GUI
+
+[![Alire](https://img.shields.io/endpoint?url=https://alire.ada.dev/badges/ada_gui.json)](https://alire.ada.dev/crates/ada_gui.html)
+
 An Ada-oriented GUI
 
 Traditionally, GUIs have been implemented by the client registering callback operations, then giving up its thread of control to the GUI. This is a hack to address the inherent parallelism of a GUI in sequential languages. It results in code that is unnecessarily difficult to understand.
