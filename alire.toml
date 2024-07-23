@@ -1,6 +1,6 @@
 name = "ada_gui"
 description = "An Ada-oriented GUI"
-version = "20240225"
+version = "20240224.0.1"
 
 authors = ["Jeff Carter"]
 maintainers = ["Bent Bracke <bent@bracke.dk>"]
